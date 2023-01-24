@@ -43,8 +43,7 @@ function checkIndex({target}) {
 
 
 let resetInterval = () => {
-
-    console.log('reseto')
+    
     clearInterval(interval);
     interval = setInterval(functionInterval, timeInterval)
 }
