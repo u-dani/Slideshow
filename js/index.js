@@ -2,35 +2,49 @@
 let slide1 = document.querySelector('.c-slide--slide1');
 let inputs = document.querySelectorAll('.c-slider-nav__input');
 
-const classe = 'c-slider-nav__input--';
+let index = 1;
+let functionInterval = () => {
+    index++;
+    if (index > 5) {
+        index = 1;
+    }
+    changeSlide();
+}
+let timeInterval = 5000;
+let interval = setInterval(functionInterval, timeInterval);
 
 
 inputs.forEach( input => {
-    input.addEventListener('change', changeSlide);
+    input.addEventListener('change', checkIndex);
 })
 
 
-function changeSlide({target}) {
+function changeSlide() {
 
-    switch (target.id) {
-        case "slide-1":
-            slide1.style.marginLeft = "0%";
-            break;
-        
-        case "slide-2":
-            slide1.style.marginLeft = "-20%";
-            break;
+    inputs.forEach( input => {
+        input.parentNode.classList.remove('c-slider-nav__label--fill');
+    });
+    
+    inputs[index - 1].parentNode.classList.add('c-slider-nav__label--fill');
 
-        case "slide-3":
-            slide1.style.marginLeft = "-40%";
-            break;
+    let margin = 20 * (index-1);
+    slide1.style.marginLeft = "-" + margin +"%";
+}
 
-        case "slide-4":
-            slide1.style.marginLeft = "-60%";
-            break;
 
-        case "slide-5":
-            slide1.style.marginLeft = "-80%";
-            break;
-    }
+function checkIndex({target}) {
+
+    resetInterval();
+    const array = target.id.split("");
+    const arrayReverse = array.reverse();
+    index = arrayReverse[0];
+    changeSlide();
+}
+
+
+let resetInterval = () => {
+
+    console.log('reseto')
+    clearInterval(interval);
+    interval = setInterval(functionInterval, timeInterval)
 }

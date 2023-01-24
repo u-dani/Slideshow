@@ -92,6 +92,9 @@ html, body {
   height: 30px;
   width: 100px;
 }
+.c-slider-nav .c-slider-nav__label--fill {
+  background-color: #2BFF88;
+}
 .c-slider-nav .c-slider-nav__label:hover {
   background-color: #2BFF88;
 }
