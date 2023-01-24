@@ -1,0 +1,16 @@
+
+@use 'variables' as *;
+
+@mixin slides-images($parent, $array) {
+    @each $key, $value in $array {
+        #{$parent}#{$key} {
+            background: {
+                image: url('../images/#{$value}.jpg');
+                position: center;
+                repeat: no-repeat;
+                size: cover;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes backgroundGradient {
+  to {
+    background-position-y: 100%;
+  }
+}
+.l-main {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-name: backgroundGradient;
+}
+
+.l-container-slides {
+  border-radius: 10px;
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 500%;
+}
+
+.c-slide {
+  height: 100%;
+  transition: margin 0.75s;
+  width: 20%;
+}
+.c-slide--slide1 {
+  background-image: url("../images/floresta em volta do rio.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.c-slide--slide2 {
+  background-image: url("../images/gato no campo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.c-slide--slide3 {
+  background-image: url("../images/ovelha filhote na grama.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.c-slide--slide4 {
+  background-image: url("../images/montanhas rio e floresta.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.c-slide--slide5 {
+  background-image: url("../images/mulher de bracos abertos.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.c-slider-nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  left: 50%;
+  max-width: 800px;
+  position: absolute;
+  top: 85%;
+  transform: translateX(-50%);
+  width: 50%;
+  z-index: 200;
+}
+.c-slider-nav .c-slider-nav__label {
+  border-radius: 20px;
+  border: 2px solid white;
+  cursor: pointer;
+  flex: 1;
+  height: 30px;
+  width: 100px;
+}
+.c-slider-nav .c-slider-nav__label:hover {
+  background-color: #2BFF88;
+}
+.c-slider-nav__input {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

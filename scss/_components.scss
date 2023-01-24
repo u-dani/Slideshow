@@ -1,0 +1,41 @@
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.c-slide {
+    @include slides-images('&--', $array-name-images);
+    height: 100%;
+    transition: margin .75s;
+    width: 20%;
+}
+
+.c-slider-nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    left: 50%;
+    max-width: 800px;
+    position: absolute;
+    top: 85%;
+    transform: translateX(-50%); 
+    width: 50%;
+    z-index: 200;
+
+    .c-slider-nav__label {
+        border-radius: $border-radius-large;
+        border: 2px solid $primary-color;
+        cursor: pointer;
+        flex: 1;
+        height: 30px;
+        width: 100px;
+
+        &:hover {
+            background-color: $second-color;
+        }
+    }
+
+    &__input {
+        display: none;
+    }
+}
+

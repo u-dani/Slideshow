@@ -1,0 +1,27 @@
+
+@use 'variables' as *;
+@use 'animations' as *;
+
+.l-main {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    animation: {
+        delay: 1s;
+        direction: alternate;
+        duration: 20s;
+        iteration-count: infinite;
+        name: backgroundGradient
+    };
+}
+
+.l-container-slides {
+    border-radius: $border-radius-small;
+    display: flex;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 500%;
+}
