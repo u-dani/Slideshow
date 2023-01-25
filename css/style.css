@@ -9,21 +9,11 @@ html, body {
   height: 100vh;
 }
 
-@keyframes backgroundGradient {
-  to {
-    background-position-y: 100%;
-  }
-}
 .l-main {
   height: 100%;
-  overflow: hidden;
   position: relative;
   width: 100%;
-  animation-delay: 1s;
-  animation-direction: alternate;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-name: backgroundGradient;
+  overflow: hidden;
 }
 
 .l-container-slides {
@@ -33,40 +23,11 @@ html, body {
   left: 0;
   position: absolute;
   top: 0;
-  width: 500%;
+  transition: 1s;
 }
 
 .c-slide {
   height: 100%;
-  transition: margin 0.75s;
-  width: 20%;
-}
-.c-slide--slide1 {
-  background-image: url("../images/floresta em volta do rio.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.c-slide--slide2 {
-  background-image: url("../images/gato no campo.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.c-slide--slide3 {
-  background-image: url("../images/ovelha filhote na grama.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.c-slide--slide4 {
-  background-image: url("../images/montanhas rio e floresta.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.c-slide--slide5 {
-  background-image: url("../images/mulher de bracos abertos.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

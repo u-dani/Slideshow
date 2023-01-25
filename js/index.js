@@ -1,50 +1,113 @@
 
-let slide1 = document.querySelector('.c-slide--slide1');
-let inputs = document.querySelectorAll('.c-slider-nav__input');
+const containerSlides = document.querySelector('.js-container-slides')
+const SliderNav = document.querySelector('.js-slider-nav');
 
-let index = 1;
+const classSlide = 'c-slide';
+const classLabel = 'c-slider-nav__label';
+const classLabelFill = 'c-slider-nav__label--fill';
+const classInput = 'c-slider-nav__input';
+
+let labels;
+let inputs;
+
+let index = 0;
 let functionInterval = () => {
     index++;
-    if (index > 5) {
-        index = 1;
+    if (index >= arrayNamesImagens.length) {
+        index = 0;
     }
     changeSlide();
-}
+};
 let timeInterval = 5000;
 let interval = setInterval(functionInterval, timeInterval);
 
+/* .jpg */
+const arrayNamesImagens = [
+    'floresta em volta do rio',
+    'gato no campo',
+    'pantera cor de rosa bebada',
+    'montanhas rio e floresta',
+    'mulher de bracos abertos',
+    'ovelha filhote na grama',
+    'mulher em flores brancas',
+    'gato preto',
+    'gato preto andando',
+    'macacos cinzas'
+];
 
-inputs.forEach( input => {
-    input.addEventListener('change', checkIndex);
-})
+containerSlides.style.width = arrayNamesImagens.length * 100 + "%";
+const widthSlide = 100;
+
+
+function loadSlides() {
+
+    arrayNamesImagens.forEach( (name, index) => {
+        createSlides( name, index );
+        createSliderNav( index )
+    });
+
+    labels = document.querySelectorAll('.' + classLabel);
+    inputs = document.querySelectorAll('.' + classInput);
+
+    labels[0].classList.add(classLabelFill);
+    inputs[0].setAttribute('checked', '');
+
+    inputs.forEach( input => {
+        input.addEventListener('change', checkIndex);
+    });
+}
+
+
+function createSlides( name, index ) {
+
+    let slide = document.createElement('div');
+    slide.classList.add(classSlide);
+    slide.setAttribute('data-slide', index)
+
+    slide.style.width = widthSlide + "%";
+    slide.style.backgroundImage = 'url("../images/' + name + '.jpg")';
+
+    containerSlides.appendChild(slide);
+}
+
+
+function createSliderNav( index ) {
+
+    let label = document.createElement('label');
+    label.classList.add(classLabel);
+    label.setAttribute('for', 'slide-' + index);
+
+    label.innerHTML = `<input type="radio" name="slider-nav" class=${classInput} id="slide-${index}" data-slide="${index}"/>`
+
+    SliderNav.appendChild(label);
+}
 
 
 function changeSlide() {
+    let left = (index * widthSlide);
+    containerSlides.style.left = '-' + left + "%";
 
-    inputs.forEach( input => {
-        input.parentNode.classList.remove('c-slider-nav__label--fill');
+    labels.forEach( label => {
+        label.classList.remove(classLabelFill);
     });
-    
-    inputs[index - 1].parentNode.classList.add('c-slider-nav__label--fill');
 
-    let margin = 20 * (index-1);
-    slide1.style.marginLeft = "-" + margin +"%";
+    inputs[index].parentNode.classList.add(classLabelFill);
+
 }
 
 
 function checkIndex({target}) {
 
     resetInterval();
-    const array = target.id.split("");
-    const arrayReverse = array.reverse();
-    index = arrayReverse[0];
+    index = target.dataset.slide;
     changeSlide();
 }
 
 
 let resetInterval = () => {
-
-    console.log('reseto')
     clearInterval(interval);
     interval = setInterval(functionInterval, timeInterval)
 }
+
+
+window.onload = loadSlides();

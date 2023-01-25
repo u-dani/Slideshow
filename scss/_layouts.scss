@@ -1,19 +1,11 @@
 
 @use 'variables' as *;
-@use 'animations' as *;
 
 .l-main {
     height: 100%;
-    overflow: hidden;
     position: relative;
     width: 100%;
-    animation: {
-        delay: 1s;
-        direction: alternate;
-        duration: 20s;
-        iteration-count: infinite;
-        name: backgroundGradient
-    };
+    overflow: hidden;
 }
 
 .l-container-slides {
@@ -23,5 +15,5 @@
     left: 0;
     position: absolute;
     top: 0;
-    width: 500%;
+    transition: 1s;
 }
