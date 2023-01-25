@@ -20,3 +20,6 @@
 ### Video do Youtube
  Referencia
  https://www.youtube.com/watch?v=zxqGOgsgUtk&list=WL
+ 
+### Aprimoramentos Futuros
+ Facilitar a troca, adição e/ou remoção de imagens.
