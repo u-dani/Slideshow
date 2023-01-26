@@ -65,7 +65,7 @@ function createSlides( name, index ) {
     slide.setAttribute('data-slide', index)
 
     slide.style.width = widthSlide + "%";
-    slide.style.backgroundImage = 'url("../images/' + name + '.jpg")';
+    slide.style.backgroundImage = 'url("images/' + name + '.jpg")';
 
     containerSlides.appendChild(slide);
 }
