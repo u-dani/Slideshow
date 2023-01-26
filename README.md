@@ -21,5 +21,5 @@
  Referencia
  https://www.youtube.com/watch?v=zxqGOgsgUtk&list=WL
  
-### Aprimoramentos Futuros
- Facilitar a troca, adição e/ou remoção de imagens.
+### Infos
+ Pra adicionar, remover ou mudar alguma imagem, basta mexer na pasta images, e no array 'arrayNameImages' no arquivo index.js, é bem simples.
