@@ -2,6 +2,10 @@
  um slide simples com 'animação' de transição
 
 ## Links
+
+### Github Pages
+https://u-dani.github.io/Slideshow/
+
 ### Imagens
  https://www.pexels.com/pt-br/foto/fotografia-de-paisagem-de-montanha-e-corpo-d-agua-2387418/
  https://www.pexels.com/pt-br/foto/lago-1105389/
