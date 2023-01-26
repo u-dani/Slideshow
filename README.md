@@ -4,7 +4,7 @@
 ## Links
 
 ### Github Pages
- <a href="https://u-dani.github.io/Slideshow/" target="_blank">a</a>
+ https://u-dani.github.io/Slideshow
 
 ### Imagens
  https://www.pexels.com/pt-br/foto/fotografia-de-paisagem-de-montanha-e-corpo-d-agua-2387418/
