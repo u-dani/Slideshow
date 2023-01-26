@@ -23,16 +23,16 @@ let interval = setInterval(functionInterval, timeInterval);
 
 /* .jpg */
 const arrayNamesImagens = [
-    'floresta em volta do rio',
-    'gato no campo',
-    'pantera cor de rosa bebada',
-    'montanhas rio e floresta',
-    'mulher de bracos abertos',
-    'ovelha filhote na grama',
-    'mulher em flores brancas',
-    'gato preto',
-    'gato preto andando',
-    'macacos cinzas'
+    'floresta-rio',
+    'gato-no-campo',
+    'gato-preto',
+    'gato-preto-andando',
+    'macacos-cinzas',
+    'montanhas-rio-floresta',
+    'mulher-flores-brancas',
+    'mulher-vestido-florido',
+    'ovelha-filhote-na-grama',
+    'pantera-cor-de-rosa'
 ];
 
 containerSlides.style.width = arrayNamesImagens.length * 100 + "%";
